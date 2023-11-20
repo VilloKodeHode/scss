@@ -24,6 +24,17 @@ header {
   grid-template-columns: 80px 1fr 300px;
   padding: 0px 80px;
 }
+@media (max-width: 768px) {
+  header {
+    padding: 0px 48px;
+  }
+}
+@media (max-width: 428px) {
+  header {
+    padding: 0px 24px;
+    grid-template-columns: 80px 1fr 200px;
+  }
+}
 header figure {
   height: 80px;
   padding: 4px;
@@ -36,6 +47,7 @@ header nav {
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 header nav a {
   width: -moz-fit-content;
@@ -46,17 +58,32 @@ header nav a {
   text-align: center;
   transition: 1s all ease;
 }
+@media (max-width: 768px) {
+  header nav a {
+    font-size: 16px;
+  }
+}
 header nav a:hover {
   color: var(--black);
   text-shadow: var(--white) 3px 3px 4px;
 }
 
 main {
-  background-color: var(--secondary);
+  background-color: var(--black);
   padding: 0px 84px;
   display: flex;
   flex-direction: column;
   gap: 200px;
+}
+@media (max-width: 768px) {
+  main {
+    padding: 0px 48px;
+  }
+}
+@media (max-width: 428px) {
+  main {
+    padding: 0px 24px;
+  }
 }
 main section:first-of-type {
   height: calc(100vh - 80px);
@@ -127,8 +154,8 @@ main section:first-of-type figure {
 }
 main section:first-of-type figure img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 main section:nth-of-type(2) {
   background-color: #141616;
@@ -190,6 +217,7 @@ main section:nth-of-type(2) div img:nth-of-type(9) {
 }
 
 footer {
+  margin-top: 200px;
   background-color: var(--tertiary);
   height: 160px;
 }/*# sourceMappingURL=styles.css.map */
