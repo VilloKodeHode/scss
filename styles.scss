@@ -101,7 +101,9 @@ main {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 3fr;
     }
-
+    @media (max-width: 768px) {
+        margin: 80px 0 0 0;
+      }
     article {
       @include flex-center;
       flex-direction: column;
@@ -140,38 +142,41 @@ main {
     figure {
       @include flex-center;
       justify-content: end;
-      align-items: flex-end;
+    //   align-items: flex-end;
       margin: 80px 0;
-      max-height: 100%;
-      overflow: hidden;
+      max-height: fit-content;
+    //   overflow: hidden;
 
       @media (max-width: 1440px) {
         margin: 0;
       }
 
+      
+
       img {
         width: 100%;
-        // object-fit: cover;
+        object-fit: cover;
         object-position: top;
       }
     }
   }
   section:nth-of-type(2) {
     background-color: #141616;
+
     div {
       display: grid;
       grid-template-rows: 300px 200px 300px;
       grid-template-columns: repeat(3, 1fr);
       grid-template-areas:
-        "one  two   three"
-        "four four  six"
-        "seven eight  six";
+        "one   two   three"
+        "four  four  six"
+        "seven eight six";
       @media (max-width: 1440px) {
         grid-template-rows: 200px 100px 300px 150px 200px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas:
-          "six  two"
-          "six one"
+          "six   two"
+          "six   one"
           "four four"
           "seven eight"
           "three three";
@@ -189,47 +194,49 @@ main {
           "seven"
           "eight";
       }
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-
         &:nth-of-type(1) {
-          grid-area: four;
-          object-position: 50% 85%;
-        }
+            grid-area: four;
+            object-position: 50% 85%;
+          }
         &:nth-of-type(2) {
-          grid-area: two;
-        }
-        &:nth-of-type(3) {
-          grid-area: three;
-        }
-        &:nth-of-type(4) {
-          grid-area: one;
-        }
-        &:nth-of-type(5) {
-          grid-area: eight;
-        }
-        &:nth-of-type(6) {
-          grid-area: six;
-        }
-        &:nth-of-type(7) {
-          grid-area: seven;
-        }
-        &:nth-of-type(8) {
-          grid-area: eight;
-        }
-        &:nth-of-type(9) {
-          grid-area: six;
-        }
+            grid-area: two;
+            object-position: 50% 20%;
+          }
+          &:nth-of-type(3) {
+            grid-area: three;
+          }
+          &:nth-of-type(4) {
+            grid-area: one;
+          }
+          &:nth-of-type(5) {
+            grid-area: eight;
+          }
+          &:nth-of-type(6) {
+            grid-area: six;
+          }
+          &:nth-of-type(7) {
+            grid-area: seven;
+          }
+          &:nth-of-type(8) {
+            grid-area: eight;
+          }
+          &:nth-of-type(9) {
+            grid-area: six;
+          }
       }
     }
   }
 }
 
+
 // Footer styles
 footer {
-  margin-top: 200px;
-  background-color: var(--tertiary);
-  height: 160px;
-}
+    margin-top: 200px;
+    background-color: var(--tertiary);
+    height: 160px;
+  }
